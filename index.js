@@ -32,9 +32,7 @@ app.get('/task2b', (req, res) => {
 });
 
 app.get('/task2c', (req,res) => {
-//	const username = req.query.username; 
 	const username = req.query.username.match(re)[6];
-//	return '@' + username;
 	res.send('@' + username);
 });
 

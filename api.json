@@ -1,0 +1,691 @@
+[{
+"facilityId": "0365B815-B108-429F-A9AF-E5A0C993B654",
+"icon": "error",
+"title": "Исходящее заявление без параметров github",
+"details": "Детали пусть будут"
+},
+{
+"facilityId": "0365B815-B108-429F-A9AF-E5A0C993B654",
+"icon": "error",
+"title": "Исходящее заявление + динамический текстовый параметр",
+"details": "Детали пусть будут",
+"parameters": [{
+"name": "Description2",
+"type": 1,
+"defaultValue": null,
+"isRequired": true,
+"isCollection": false,
+"properties": {
+"MaxLength": "1000",
+"Multiline": "False"
+}
+},{
+"name": "FileParam",
+"type": 7,
+"defaultValue": null,
+"isRequired": true,
+"isCollection": true,
+"properties": {
+"MaxSize": "1048576",
+"FileTypes": ".doc,.docx,.pdf"
+}
+}
+],
+"form": {
+"openingHandler": null,
+"openedHandler": null,
+"closingHandler": null,
+"closedHandler": null,
+"items": [{
+"type": 3,
+"hint": "Текст заявления",
+"properties": {
+"ParameterName": "Description2",
+"ShowTitles": "True",
+"IsReadOnly": "true",
+"IsHidden": "False",
+"Label": "Описание",
+"ItemAddedHandler": "",
+"ItemAddingHandler": "",
+"ItemRemovedHandler": "",
+"ItemRemovingHandler": "",
+"ValueChangedHandler": "",
+"CalculateFunction": ""
+}
+},{
+"type": 3,
+"hint": "Элемент формы для FileParam",
+"properties": {
+"ParameterName": "FileParam",
+"ShowTitles": "True",
+"IsReadOnly": "False",
+"IsHidden": "False",
+"Label": "Параметр типа файл",
+"ItemAddedHandler": "",
+"ItemAddingHandler": "",
+"ItemRemovedHandler": "",
+"ItemRemovingHandler": "",
+"ValueChangedHandler": "",
+"CalculateFunction": ""
+}
+}
+]
+}
+}, {
+"facilityId": "0365B815-B108-429F-A9AF-E5A0C993B654",
+"icon": "error",
+"title": "Исходящее заявление + все типы параметров",
+"details": "Детали пусть будут",
+"parameters": [{
+"name": "Description2",
+"type": 1,
+"defaultValue": "По-умолчанию_Динамический",
+"isRequired": true,
+"isCollection": true,
+"properties": {
+"MaxLength": "1000",
+"Multiline": "False"
+}
+}, {
+"name": "Number",
+"type": 0,
+"defaultValue": "2",
+"isRequired": true,
+"isCollection": true,
+"properties": {
+"IsInteger": "True",
+"Precision": "0",
+"MinValue": "1",
+"MaxValue": "100"
+}
+}, {
+"name": "DateParam",
+"type": 2,
+"defaultValue": null,
+"isRequired": true,
+"isCollection": false,
+"properties": {
+"ShowTime": "True",
+"MinValue": "",
+"MaxValue": ""
+}
+}, {
+"name": "SelectParam",
+"type": 3,
+"defaultValue": "Value2",
+"isRequired": true,
+"isCollection": true,
+"properties": {
+"Values": "Value1,Value2,Value3",
+"Captions": "Caption1,Caption2,Caption3"
+}
+}, {
+"name": "ReferenceParam",
+"type": 4,
+"defaultValue": 196,
+"isRequired": true,
+"isCollection": true,
+"properties": {
+"SystemName": "EssBase",
+"ReferenceName": "Employee",
+"DisplayRequisite": "Name",
+"StoreRequisite": "Id",
+"Filter": ""
+}
+}, {
+"name": "BooleanParam",
+"type": 5,
+"defaultValue": null,
+"isRequired": true,
+"isCollection": true,
+"properties": {
+"IsIndeterminateAllowed": "False"
+}
+}, {
+"name": "IntervalParam",
+"type": 6,
+"defaultValue": null,
+"isRequired": true,
+"isCollection": true,
+"properties": {
+"ShowTime": "True",
+"MinValue": "",
+"MaxValue": ""
+}
+}, {
+"name": "ApplicationFileParam",
+"type": 7,
+"defaultValue": null,
+"isRequired": true,
+"isCollection": false,
+"properties": {
+"MaxSize": "1048576",
+"FileTypes": ".doc,.docx,.pdf"
+}
+}, {
+"name": "ApplicationFileParams",
+"type": 7,
+"defaultValue": null,
+"isRequired": true,
+"isCollection": true,
+"properties": {
+"MaxSize": "1048576",
+"FileTypes": ".doc,.docx,.pdf"
+}
+}, {
+"name": "QueryParam",
+"type": 8,
+"defaultValue": null,
+"isRequired": true,
+"isCollection": true,
+"properties": {
+"DataSource": "/api/values/stubs/VacationKindObject",
+"DataSourceValueField": "id",
+"DataSourceCaptionField": "name"
+}
+}
+],
+"form": {
+"openingHandler": null,
+"openedHandler": null,
+"closingHandler": null,
+"closedHandler": null,
+"items": [{
+"type": 3,
+"hint": "Хинт_Текст заявления",
+"properties": {
+"ParameterName": "Description2",
+"ShowTitles": "True",
+"IsReadOnly": "true",
+"IsHidden": "False",
+"Label": "Лэйбл_Описание",
+"ItemAddedHandler": "",
+"ItemAddingHandler": "",
+"ItemRemovedHandler": "",
+"ItemRemovingHandler": "",
+"ValueChangedHandler": "",
+"CalculateFunction": ""
+}
+}, {
+"type": 0,
+"hint": "Текст в произвольном блоке",
+"properties": {
+"Content": "это контент {{Number}}"
+}
+}, {
+"type": 1,
+"hint": "Разделитель"
+}, {
+"type": 2,
+"hint": "Картинка",
+"properties": {
+"SourcePicture": "error"
+}
+}, {
+"type": 4,
+"hint": "Хинт_Таблица",
+"properties": {
+"Title": "Планируемые отпуска",
+"ShowColumnHeaders": "True",
+"ItemAddedHandler": "",
+"ItemAddingHandler": "",
+"ItemRemovedHandler": "",
+"ItemRemovingHandler": "",
+"Columns": [{
+"Header": "Вид отпуска",
+"IsSortable": "True",
+"IsReadOnly": "False",
+"IsHidden": "False",
+"ParameterName": "SelectParam",
+"ValueChangedHandler": "",
+"CalculateFunction": ""
+},{
+"Header": "Работник",
+"IsSortable": "True",
+"IsReadOnly": "False",
+"IsHidden": "False",
+"ParameterName": "ReferenceParam",
+"ValueChangedHandler": "",
+"CalculateFunction": ""
+},{
+"Header": "Query",
+"IsSortable": "True",
+"IsReadOnly": "False",
+"IsHidden": "False",
+"ParameterName": "QueryParam",
+"ValueChangedHandler": "",
+"CalculateFunction": ""
+},{
+"Header": "Число",
+"IsSortable": "True",
+"IsReadOnly": "False",
+"IsHidden": "False",
+"ParameterName": "Number",
+"ValueChangedHandler": "",
+"CalculateFunction": ""
+},{
+"Header": "Text",
+"IsSortable": "True",
+"IsReadOnly": "True",
+"IsHidden": "False",
+"ParameterName": "Description2",
+"ValueChangedHandler": "",
+"CalculateFunction": ""
+}
+]
+}
+}, {
+"type": 3,
+"hint": "Хинт_Параметр Дата",
+"properties": {
+"ParameterName": "DateParam",
+"ShowTitles": "True",
+"IsReadOnly": "False",
+"IsHidden": "False",
+"Label": "Лейбл_Параметр типа дата",
+"ItemAddedHandler": "",
+"ItemAddingHandler": "",
+"ItemRemovedHandler": "",
+"ItemRemovingHandler": "",
+"ValueChangedHandler": "",
+"CalculateFunction": ""
+}
+}, {
+"type": 3,
+"hint": "Хинт_Элемент формы для SelectParam",
+"properties": {
+"ParameterName": "SelectParam",
+"ShowTitles": "True",
+"IsReadOnly": "true",
+"IsHidden": "False",
+"Label": "Лейбл_Параметр типа выбор значений",
+"ItemAddedHandler": "",
+"ItemAddingHandler": "",
+"ItemRemovedHandler": "",
+"ItemRemovingHandler": "",
+"ValueChangedHandler": "",
+"CalculateFunction": ""
+}
+}, {
+"type": 3,
+"hint": "Хинт_Элемент формы для ReferenceParam",
+"properties": {
+"ParameterName": "ReferenceParam",
+"ShowTitles": "True",
+"IsReadOnly": "False",
+"IsHidden": "False",
+"Label": "Лейбл_Параметр типа выбор из справочника",
+"ItemAddedHandler": "",
+"ItemAddingHandler": "",
+"ItemRemovedHandler": "",
+"ItemRemovingHandler": "",
+"ValueChangedHandler": "",
+"CalculateFunction": ""
+}
+}, {
+"type": 3,
+"hint": "Хинт_Элемент формы для BooleanParam",
+"properties": {
+"ParameterName": "BooleanParam",
+"ShowTitles": "True",
+"IsReadOnly": "False",
+"IsHidden": "False",
+"Label": "Лейбл_Параметр типа логическое значение",
+"ItemAddedHandler": "",
+"ItemAddingHandler": "",
+"ItemRemovedHandler": "",
+"ItemRemovingHandler": "",
+"ValueChangedHandler": "",
+"CalculateFunction": ""
+}
+}, {
+"type": 3,
+"hint": "Хинт_Элемент формы для IntervalParam",
+"properties": {
+"ParameterName": "IntervalParam",
+"ShowTitles": "True",
+"IsReadOnly": "False",
+"IsHidden": "False",
+"Label": "Лейбл_Параметр типа список интервалов дат",
+"ItemAddedHandler": "",
+"ItemAddingHandler": "",
+"ItemRemovedHandler": "",
+"ItemRemovingHandler": "",
+"ValueChangedHandler": "",
+"CalculateFunction": ""
+}
+}, {
+"type": 3,
+"hint": "Хинт_Элемент формы для FileParam",
+"properties": {
+"ParameterName": "ApplicationFileParam",
+"ShowTitles": "True",
+"IsReadOnly": "False",
+"IsHidden": "False",
+"Label": "Лейбл_Параметр типа файл",
+"ItemAddedHandler": "",
+"ItemAddingHandler": "",
+"ItemRemovedHandler": "",
+"ItemRemovingHandler": "",
+"ValueChangedHandler": "",
+"CalculateFunction": ""
+}
+}, {
+"type": 3,
+"hint": "Хинт_Элемент формы для QueryParam",
+"properties": {
+"ParameterName": "QueryParam",
+"ShowTitles": "True",
+"IsReadOnly": "False",
+"IsHidden": "False",
+"Label": "Лейбл_Параметр типа query",
+"ItemAddedHandler": "",
+"ItemAddingHandler": "",
+"ItemRemovedHandler": "",
+"ItemRemovingHandler": "",
+"ValueChangedHandler": "",
+"CalculateFunction": ""
+}
+}, {
+"type": 3,
+"hint": "Элемент формы для FileParams",
+"properties": {
+"ParameterName": "ApplicationFileParams",
+"ShowTitles": "True",
+"IsReadOnly": "False",
+"IsHidden": "False",
+"Label": "Параметр типа файл",
+"ItemAddedHandler": "",
+"ItemAddingHandler": "",
+"ItemRemovedHandler": "",
+"ItemRemovingHandler": "",
+"ValueChangedHandler": "",
+"CalculateFunction": ""
+}
+},{
+"type": 3,
+"hint": "Хинт_Элемент формы для Number",
+"properties": {
+"ParameterName": "Number",
+"ShowTitles": "True",
+"IsReadOnly": "False",
+"IsHidden": "False",
+"Label": "Лейбл_Параметр типа Number",
+"ItemAddedHandler": "",
+"ItemAddingHandler": "",
+"ItemRemovedHandler": "",
+"ItemRemovingHandler": "",
+"ValueChangedHandler": "",
+"CalculateFunction": ""
+}
+}
+]
+}
+}, {
+"facilityId": "0365B815-B108-429F-A9AF-E5A0C993B654",
+"icon": "error",
+"title": "Исходящее заявление + только запрашиваемые динамические параметры",
+"details": "Детали пусть будут",
+"parameters": [{
+"name": "Description2",
+"type": 1,
+"defaultValue": null,
+"isRequired": true,
+"isCollection": true,
+"properties": {
+"MaxLength": "1000",
+"Multiline": "False"
+}
+}, {
+"name": "Number",
+"type": 0,
+"defaultValue": 2,
+"isRequired": true,
+"isCollection": false,
+"properties": {
+"IsInteger": "True",
+"Precision": "0",
+"MinValue": "1",
+"MaxValue": "100"
+}
+}, {
+"name": "DateParam",
+"type": 2,
+"defaultValue": null,
+"isRequired": true,
+"isCollection": false,
+"properties": {
+"ShowTime": "True",
+"MinValue": "",
+"MaxValue": ""
+}
+}, {
+"name": "SelectParam",
+"type": 3,
+"defaultValue": null,
+"isRequired": true,
+"isCollection": false,
+"properties": {
+"Values": "Value1,Value2,Value3",
+"Captions": "Caption1,Caption2,Caption3"
+}
+}, {
+"name": "ReferenceParam",
+"type": 4,
+"defaultValue": null,
+"isRequired": false,
+"isCollection": false,
+"properties": {
+"SystemName": "EssBase",
+"ReferenceName": "Employee",
+"DisplayRequisite": "Name",
+"StoreRequisite": "Id",
+"Filter": ""
+}
+}, {
+"name": "BooleanParam",
+"type": 5,
+"defaultValue": "true",
+"isRequired": true,
+"isCollection": false,
+"properties": {
+"IsIndeterminateAllowed": "False"
+}
+}, {
+"name": "IntervalParam",
+"type": 6,
+"defaultValue": null,
+"isRequired": false,
+"isCollection": true,
+"properties": {
+"ShowTime": "True",
+"MinValue": "",
+"MaxValue": ""
+}
+}, {
+"name": "FileParam",
+"type": 7,
+"defaultValue": null,
+"isRequired": false,
+"isCollection": false,
+"properties": {
+"MaxSize": "1048576",
+"FileTypes": ".doc,.docx,.pdf"
+}
+}, {
+"name": "FileParams",
+"type": 7,
+"defaultValue": null,
+"isRequired": false,
+"isCollection": true,
+"properties": {
+"MaxSize": "1048576",
+"FileTypes": ".doc,.docx,.pdf"
+}
+}, {
+"name": "QueryParam",
+"type": 8,
+"defaultValue": null,
+"isRequired": false,
+"isCollection": false,
+"properties": {
+"DataSource": "/api/values/stubs/VacationKindObject",
+"DataSourceValueField": "id",
+"DataSourceCaptionField": "name"
+}
+}
+],
+"form": {
+"openingHandler": null,
+"openedHandler": null,
+"closingHandler": null,
+"closedHandler": null,
+"items": [{
+"type": 3,
+"hint": "Текст заявления",
+"properties": {
+"ParameterName": "Description2",
+"ShowTitles": "True",
+"IsReadOnly": "False",
+"IsHidden": "False",
+"Label": "Описание",
+"ItemAddedHandler": "",
+"ItemAddingHandler": "",
+"ItemRemovedHandler": "",
+"ItemRemovingHandler": "",
+"ValueChangedHandler": "",
+"CalculateFunction": ""
+}
+}, {
+"type": 3,
+"hint": "",
+"properties": {
+"ParameterName": "DateParam",
+"ShowTitles": "True",
+"IsReadOnly": "False",
+"IsHidden": "False",
+"Label": "",
+"ItemAddedHandler": "",
+"ItemAddingHandler": "",
+"ItemRemovedHandler": "",
+"ItemRemovingHandler": "",
+"ValueChangedHandler": "",
+"CalculateFunction": ""
+}
+}, {
+"type": 3,
+"hint": "Элемент формы для SelectParam",
+"properties": {
+"ParameterName": "SelectParam",
+"ShowTitles": "True",
+"IsReadOnly": "False",
+"IsHidden": "False",
+"Label": "Параметр типа выбор значений",
+"ItemAddedHandler": "",
+"ItemAddingHandler": "",
+"ItemRemovedHandler": "",
+"ItemRemovingHandler": "",
+"ValueChangedHandler": "",
+"CalculateFunction": ""
+}
+}, {
+"type": 3,
+"hint": "Элемент формы для ReferenceParam",
+"properties": {
+"ParameterName": "ReferenceParam",
+"ShowTitles": "True",
+"IsReadOnly": "False",
+"IsHidden": "False",
+"Label": "Параметр типа выбор из справочника",
+"ItemAddedHandler": "",
+"ItemAddingHandler": "",
+"ItemRemovedHandler": "",
+"ItemRemovingHandler": "",
+"ValueChangedHandler": "",
+"CalculateFunction": ""
+}
+}, {
+"type": 3,
+"hint": "Элемент формы для BooleanParam",
+"properties": {
+"ParameterName": "BooleanParam",
+"ShowTitles": "True",
+"IsReadOnly": "False",
+"IsHidden": "False",
+"Label": "Параметр типа логическое значение",
+"ItemAddedHandler": "",
+"ItemAddingHandler": "",
+"ItemRemovedHandler": "",
+"ItemRemovingHandler": "",
+"ValueChangedHandler": "",
+"CalculateFunction": ""
+}
+}, {
+"type": 3,
+"hint": "Элемент формы для IntervalParam",
+"properties": {
+"ParameterName": "IntervalParam",
+"ShowTitles": "True",
+"IsReadOnly": "False",
+"IsHidden": "False",
+"Label": "Параметр типа список интервалов дат",
+"ItemAddedHandler": "",
+"ItemAddingHandler": "",
+"ItemRemovedHandler": "",
+"ItemRemovingHandler": "",
+"ValueChangedHandler": "",
+"CalculateFunction": ""
+}
+}, {
+"type": 3,
+"hint": "Элемент формы для FileParam",
+"properties": {
+"ParameterName": "FileParam",
+"ShowTitles": "True",
+"IsReadOnly": "False",
+"IsHidden": "False",
+"Label": "Параметр типа файл",
+"ItemAddedHandler": "",
+"ItemAddingHandler": "",
+"ItemRemovedHandler": "",
+"ItemRemovingHandler": "",
+"ValueChangedHandler": "",
+"CalculateFunction": ""
+}
+}, {
+"type": 3,
+"hint": "хинт_Элемент формы для QueryParam",
+"properties": {
+"ParameterName": "QueryParam",
+"ShowTitles": "True",
+"IsReadOnly": "False",
+"IsHidden": "False",
+"Label": "Параметр типа query",
+"ItemAddedHandler": "",
+"ItemAddingHandler": "",
+"ItemRemovedHandler": "",
+"ItemRemovingHandler": "",
+"ValueChangedHandler": "",
+"CalculateFunction": ""
+}
+}, {
+"type": 3,
+"hint": "Элемент формы для FileParams",
+"properties": {
+"ParameterName": "FileParams",
+"ShowTitles": "True",
+"IsReadOnly": "False",
+"IsHidden": "False",
+"Label": "Параметр типа коллекция файлов",
+"ItemAddedHandler": "",
+"ItemAddingHandler": "",
+"ItemRemovedHandler": "",
+"ItemRemovingHandler": "",
+"ValueChangedHandler": "",
+"CalculateFunction": ""
+}
+}
+]
+}
+}
+]
